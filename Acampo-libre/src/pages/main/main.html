@@ -1,0 +1,17 @@
+<ion-menu [content]="mycontent">
+    <ion-content>
+        <ion-list>
+             <button ion-item menuClose (click)="openPage(HomePage)">
+                Home
+            </button>
+            <button ion-item menuClose (click)="openPage(AboutPage)">
+                About
+            </button>
+            <button ion-item menuClose (click)="openPage(CampsitesPage)">
+                Campsites
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

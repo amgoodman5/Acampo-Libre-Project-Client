@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import {CampsiteService} from './services/campsite.service'
-import { TabsPage } from '../pages/tabs/tabs';
+import {CampsiteService} from './services/campsite.service';
+import { MainPage } from '../pages/main/main';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   providers: [CampsiteService]
 })
 export class MyApp {
-  rootPage = TabsPage;
+  rootPage = MainPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

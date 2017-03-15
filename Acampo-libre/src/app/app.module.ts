@@ -4,9 +4,9 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
 import { SinglePage } from '../pages/campsite-single/campsite-single';
 import {CampsitesPage} from '../pages/campsites/campsites';
+import{MainPage} from '../pages/main/main';
 
 @NgModule({
   declarations: [
@@ -14,9 +14,9 @@ import {CampsitesPage} from '../pages/campsites/campsites';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
     SinglePage,
-    CampsitesPage
+    CampsitesPage,
+    MainPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -27,9 +27,9 @@ import {CampsitesPage} from '../pages/campsites/campsites';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
     SinglePage,
-    CampsitesPage
+    CampsitesPage,
+    MainPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
