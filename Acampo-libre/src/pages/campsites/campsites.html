@@ -4,19 +4,33 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Campsites</ion-title >
-  </ion-navbar>
-</ion-header>
+</ion-navbar>
 
-<ion-content>
+
+
+</ion-header>
+<ion-content class="card-background-page" >
+
+<ion-card>
+  <img src="../../assets/camp2.jpg"/>
+  <div class="card-title">Campsites in Colorado</div>
+  <div class="card-subtitle">Prime spots</div>
+</ion-card>
+
+
 <ion-list>
   <ion-item *ngFor='let item of items'>
     <ion-thumbnail item-left>
       <img src="../../assets/camp1.jpg"/>
     </ion-thumbnail>
     <h2>{{item.name}}</h2>
-    <p></p>
+    <h2>{{item.state}}</h2>
+    <h2>{{item.type}}</h2>
     <button ion-button clear item-right>View</button>
   </ion-item>
+
 </ion-list>
+
+<button ion-button full (click)='ViewBack()'>Home</button>
 
 </ion-content>

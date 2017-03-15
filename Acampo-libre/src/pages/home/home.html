@@ -7,16 +7,33 @@
   </ion-navbar>
 </ion-header>
 
+
 <ion-content>
-  <ion-slides pager>
-    <ion-slide >
-      <img src="../../assets/camp1.jpg" class="slide-image"/>
+  <ion-content class="card-background-page2">
 
-    </ion-slide>
+  <ion-card (click)="ViewCampsite()">
+    <img src="../../assets/camp2.jpg"/>
+    <div class="card-title">Colorado</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
 
-    <ion-slide >
-      <img src="../../assets/camp2.jpg" class="slide-image"/>
+  <ion-card>
+    <img src="../../assets/camp1.jpg"/>
+    <div class="card-title">New Mexico</div>
+    <div class="card-subtitle">64 Listings</div>
+  </ion-card>
 
-    </ion-slide>
-  </ion-slides>
-</ion-content >
+  <ion-card>
+    <img src="../../assets/camp2.jpg"/>
+    <div class="card-title">Utah</div>
+    <div class="card-subtitle">72 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="../../assets/camp1.jpg"/>
+    <div class="card-title">Arizona</div>
+    <div class="card-subtitle">28 Listings</div>
+  </ion-card>
+
+</ion-content>
+</ion-content>

@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import {CampsiteService} from '../../app/services/campsite.service';
 import { HomePage } from '../home/home';
 @Component({
- 
+
   templateUrl: 'campsites.html'
 })
 export class CampsitesPage {
@@ -21,7 +21,10 @@ ngOnInit(){
      this.items = response;
 
   });
-}
 
+}
+ViewBack(){
+  this.navCtrl.setRoot(HomePage)
+}
 
 }
