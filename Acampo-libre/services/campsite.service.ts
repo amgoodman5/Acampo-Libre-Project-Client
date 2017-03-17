@@ -15,7 +15,7 @@ export class CampsiteService{
   }
 
   getCampsites(name, limit){
-    return this.http.get(this.baseUrl)
+    return this.http.get(this.baseUrl/"id")
       .map(res => res.json())
   }
 }

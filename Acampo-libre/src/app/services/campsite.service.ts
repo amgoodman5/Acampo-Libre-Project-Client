@@ -18,4 +18,6 @@ export class CampsiteService{
     return this.http.get(this.baseUrl)
       .map(res => res.json());
   }
-}
+
+
+  }

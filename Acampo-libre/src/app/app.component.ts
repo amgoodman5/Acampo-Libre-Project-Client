@@ -11,7 +11,7 @@ import { MainPage } from '../pages/main/main';
 })
 export class MyApp {
   rootPage = MainPage;
-  
+
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

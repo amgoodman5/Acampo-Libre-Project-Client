@@ -7,6 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { SinglePage } from '../pages/campsite-single/campsite-single';
 import {CampsitesPage} from '../pages/campsites/campsites';
 import{MainPage} from '../pages/main/main';
+import{MapPage} from '../pages/maps/maps';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,12 @@ import{MainPage} from '../pages/main/main';
     HomePage,
     SinglePage,
     CampsitesPage,
+    MapPage,
     MainPage
+
+
+
+
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,7 +36,12 @@ import{MainPage} from '../pages/main/main';
     HomePage,
     SinglePage,
     CampsitesPage,
-    MainPage
+    MainPage,
+    MapPage
+
+
+
+
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
