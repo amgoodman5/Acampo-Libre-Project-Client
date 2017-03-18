@@ -1,4 +1,5 @@
-<ion-menu [content]="mycontent">
+<ion-menu type="overlay" [content]="content">
+
     <ion-content>
         <ion-list>
              <button menuClose ion-item *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
@@ -8,4 +9,4 @@
     </ion-content>
 </ion-menu>
 
-<ion-nav #mycontent [root]="rootPage" swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

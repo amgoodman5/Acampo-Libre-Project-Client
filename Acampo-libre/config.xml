@@ -28,6 +28,10 @@
   <preference name="FadeSplashScreenDuration" value="300"/>
   <preference name="SplashShowOnlyFirstTime" value="false"/>
   <feature name="StatusBar">
+    <feature name="InAppBrowser">
+  <param name="ios-package" value="CDVInAppBrowser" />
+  <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+</feature>
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>
   <plugin name="ionic-plugin-keyboard" spec="~2.2.1"/>

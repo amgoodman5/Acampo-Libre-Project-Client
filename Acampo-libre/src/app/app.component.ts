@@ -8,6 +8,8 @@ import { AboutPage } from '../pages/about/about';
 import { SinglePage } from '../pages/campsite-single/campsite-single';
 import { CampsitesPage } from '../pages/campsites/campsites';
 import {MapPage} from '../pages/maps/maps';
+import {LoginPage} from '../pages/login/login';
+
 
 
 @Component({
