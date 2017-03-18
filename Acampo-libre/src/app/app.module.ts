@@ -6,7 +6,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { SinglePage } from '../pages/campsite-single/campsite-single';
 import {CampsitesPage} from '../pages/campsites/campsites';
-import{MainPage} from '../pages/main/main';
+// import{MainPage} from '../pages/main/main';
 import{MapPage} from '../pages/maps/maps';
 
 
@@ -19,7 +19,7 @@ import{MapPage} from '../pages/maps/maps';
     SinglePage,
     CampsitesPage,
     MapPage,
-    MainPage
+    // MainPage
 
 
 
@@ -36,7 +36,6 @@ import{MapPage} from '../pages/maps/maps';
     HomePage,
     SinglePage,
     CampsitesPage,
-    MainPage,
     MapPage
 
 

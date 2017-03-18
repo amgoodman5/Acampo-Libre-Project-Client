@@ -1,26 +1,26 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 declare var google;
 
 @Component({
-  selector: 'maps-page',
+  selector: 'page-maps',
   templateUrl: 'maps.html'
 })
 export class MapPage {
 
-  @ViewChild('map') mapElement: ElementRef;
+  @ViewChild('map') mapElement;
   map: any;
 
   constructor(public navCtrl: NavController) {
 
   }
 
-  ionViewLoad(){
-    this.loadMap();
+  ionViewDidLoad(){
+    this.initMap();
   }
 
-  loadMap(){
+  initMap(){
 
     let latLng = new google.maps.LatLng(-34.9290, 138.6010);
 
@@ -33,4 +33,28 @@ export class MapPage {
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
   }
+  addMarker(){
+
+  let marker = new google.maps.Marker({
+    map: this.map,
+    animation: google.maps.Animation.DROP,
+    position: this.map.getCenter()
+  });
+
+  let content = "<h4>Information!</h4>";
+
+  this.addInfoWindow(marker, content);
+
+}
+addInfoWindow(marker, content){
+
+  let infoWindow = new google.maps.InfoWindow({
+    content: content
+  });
+
+  google.maps.event.addListener(marker, 'click', () => {
+    infoWindow.open(this.map, marker);
+  });
+
+}
 }
