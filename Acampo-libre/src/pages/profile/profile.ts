@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import {AuthService} from '../../app/services/auth.service';
+/*
+  Generated class for the Profile page.
 
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+*/
 @Component({
-  templateUrl: 'profile.html',
+  selector: 'page-profile',
+  templateUrl: 'profile.html'
 })
 export class ProfilePage {
 
-  // We need to inject AuthService so that we can
-  // use it in the view
-  constructor(public auth: AuthService) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ProfilePage');
+  }
+
 }

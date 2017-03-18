@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
@@ -8,21 +8,6 @@ import { SinglePage } from '../pages/campsite-single/campsite-single';
 import {CampsitesPage} from '../pages/campsites/campsites';
 import{LoginPage} from '../pages/login/login';
 import{MapPage} from '../pages/maps/maps';
-import { AuthConfig, AuthHttp } from 'angular2-jwt';
-import { AuthService } from '../app/services/auth.service';
-import { Http } from '@angular/http';
-import { Storage } from '@ionic/storage';
-
-let storage: Storage = new Storage();
-
-export function getAuthHttp(http) {
-  return new AuthHttp(new AuthConfig({
-    globalHeaders: [{'Accept': 'application/json'}],
-    tokenGetter: (() => storage.get('id_token'))
-  }), http);
-}
-
-
 
 
 @NgModule({
@@ -63,13 +48,6 @@ export function getAuthHttp(http) {
 
 
   ],
-  providers: [
-      AuthService,
-      {
-        provide: AuthHttp,
-        useFactory: getAuthHttp,
-        deps: [Http]
-      }
-    ]
-  })
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+})
 export class AppModule {}
