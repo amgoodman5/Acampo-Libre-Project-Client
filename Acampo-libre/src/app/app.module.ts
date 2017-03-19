@@ -8,7 +8,7 @@ import { SinglePage } from '../pages/campsite-single/campsite-single';
 import {CampsitesPage} from '../pages/campsites/campsites';
 import{LoginPage} from '../pages/login/login';
 import{MapPage} from '../pages/maps/maps';
-
+import{AddCampsitePage} from '../pages/add-campsite/add-campsite';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,10 @@ import{MapPage} from '../pages/maps/maps';
     SinglePage,
     CampsitesPage,
     MapPage,
-    LoginPage
+    LoginPage,
+    AddCampsitePage
+
+
 
     // MainPage
   ],
@@ -42,7 +45,8 @@ import{MapPage} from '../pages/maps/maps';
     HomePage,
     SinglePage,
     CampsitesPage,
-    MapPage
+    MapPage,
+    AddCampsitePage
 
 
 

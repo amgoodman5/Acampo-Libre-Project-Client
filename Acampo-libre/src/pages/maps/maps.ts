@@ -15,7 +15,6 @@ export class MapPage {
   constructor(public navCtrl: NavController) {
 
   }
-
   ionViewDidLoad(){
     this.initMap();
   }
@@ -42,10 +41,9 @@ export class MapPage {
   });
 
   let content = "<h4>Information!</h4>";
-
   this.addInfoWindow(marker, content);
-
 }
+
 addInfoWindow(marker, content){
 
   let infoWindow = new google.maps.InfoWindow({
@@ -57,4 +55,5 @@ addInfoWindow(marker, content){
   });
 
 }
+
 }

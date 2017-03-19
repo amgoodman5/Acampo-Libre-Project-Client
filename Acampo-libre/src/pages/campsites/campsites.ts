@@ -22,6 +22,7 @@ ngOnInit(){
      this.items = response;
 
   });
+  
 
 }
 ViewBack(){

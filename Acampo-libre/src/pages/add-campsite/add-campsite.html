@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar color = "primary">
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Campsites</ion-title >
+</ion-navbar>
+</ion-header>
+
+
+
+<ion-content>
+  <form (ngSubmit)="onSubmit()">
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Name</ion-label>
+  <ion-input [(ngModel)]="name" name="name" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Type</ion-label>
+<ion-input [(ngModel)]="type" name="type" type="text"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label fixed>Description</ion-label>
+<ion-textarea [(ngModel)]="description" name="description" type="text"></ion-textarea>
+</ion-item>
+
+<ion-item>
+  <ion-label fixed>Picture</ion-label>
+<ion-input [(ngModel)]="picture" name="picture" type="text"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label fixed>Video</ion-label>
+<ion-input [(ngModel)]="video_url" name="video_url" type="text"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label fixed>Address</ion-label>
+<ion-input [(ngModel)]="address" name="address" type="text"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label fixed>State</ion-label>
+<ion-select [(ngModel)]="state" name="state">
+<ion-option value="CO">CO</ion-option>
+<ion-option value="AZ">AZ</ion-option>
+<ion-option value="NM">NM</ion-option>
+<ion-option value="UT">UT</ion-option>
+</ion-select>
+</ion-item><br>
+
+
+<ion-item>
+  <ion-label fixed> Lat</ion-label>
+<ion-input [(ngModel)]="lat" name="lat" type="number"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label fixed> Long</ion-label>
+<ion-input [(ngModel)]="long" name="long" type="float"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-fab center middle>
+ <button ion-fab>Button</button>
+</ion-fab>
+  <button ion-button type="submit" block>Contribute</button>
+</ion-item>
+
+</ion-list>
+</form>
+</ion-content>

@@ -9,6 +9,7 @@ import { SinglePage } from '../pages/campsite-single/campsite-single';
 import { CampsitesPage } from '../pages/campsites/campsites';
 import {MapPage} from '../pages/maps/maps';
 import {LoginPage} from '../pages/login/login';
+import{AddCampsitePage} from '../pages/add-campsite/add-campsite';
 
 
 
@@ -22,7 +23,7 @@ export class MyApp {
   rootPage:any = HomePage;
   activePage:any;
 
-pages:Array<{title:string, component:any}>;
+  pages:Array<{title:string, component:any}>;
 
   constructor(public platform: Platform) {
    this.initializeApp();
@@ -31,7 +32,8 @@ pages:Array<{title:string, component:any}>;
       {title:'Home', component: HomePage},
       {title:'About', component: AboutPage},
       {title:'Campsite', component: CampsitesPage},
-      {title:'Map', component: MapPage}
+      {title:'Map', component: MapPage},
+      {title:'AddCampsite', component: AddCampsitePage}
 
     ];
     this.activePage = this.pages[0];
@@ -48,7 +50,7 @@ pages:Array<{title:string, component:any}>;
         this.nav.setRoot(page.component);
         this.activePage = page;
       }
-
+      
       checkActive(page){
         return page = this.activePage;
       }
