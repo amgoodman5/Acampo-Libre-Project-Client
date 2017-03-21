@@ -44,15 +44,10 @@ export class MapPage {
 
   addMarkersToMap(markers) {
     for(let marker of markers) {
-      let infowindow = new google.maps.InfoWindow({title: marker.name, description:marker.description});
       let position = new google.maps.LatLng(marker.latitude, marker.longitude);
       let campSite= new google.maps.Marker({position: position, title: marker.title});
       campSite.setMap(this.map);
-      marker.maps.event.addListener('click', () => {
-    infowindow.open(this.map, marker);
-  });
-}
-
 
   }
+}
 }
