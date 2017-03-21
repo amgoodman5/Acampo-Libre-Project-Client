@@ -21,7 +21,7 @@ export class MapPage {
     this.displayGoogleMap();
     this.getMarkers();
   }
-// 37.4122341   //-105.1288924
+  // 37.4122341   //-105.1288924
   displayGoogleMap() {
     let latLng = new google.maps.LatLng(39.742043, -104.991531);
 
@@ -35,19 +35,19 @@ export class MapPage {
   }
 
   getMarkers() {
-    this.http.get('http://localhost:3000/location')
-    .map((res) => res.json())
-    .subscribe(data => {
-      this.addMarkersToMap(data);
-    });
+    this.http.get('https://acampo.herokuapp.com/location')
+      .map((res) => res.json())
+      .subscribe(data => {
+        this.addMarkersToMap(data);
+      });
   }
 
   addMarkersToMap(markers) {
-    for(let marker of markers) {
+    for (let marker of markers) {
       let position = new google.maps.LatLng(marker.latitude, marker.longitude);
-      let campSite= new google.maps.Marker({position: position, title: marker.title});
+      let campSite = new google.maps.Marker({ position: position, title: marker.title });
       campSite.setMap(this.map);
 
+    }
   }
-}
 }

@@ -11,10 +11,10 @@ import { AuthService } from '../../services/auth.service';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-login2',
-  templateUrl: 'login2.html'
+  selector: 'page-login',
+  templateUrl: 'login.html'
 })
-export class Login2Page {
+export class LoginPage {
   email:any;
   password:any;
   member:any;
@@ -48,6 +48,16 @@ export class Login2Page {
 
   goHome(){
     this.navCtrl.setRoot(HomePage);
+  }
+
+  logout() {
+    localStorage.removeItem('id');
+    localStorage.removeItem('username');
+    localStorage.removeItem('email');
+    localStorage.removeItem('bio');
+    localStorage.removeItem('profile_pic');
+    localStorage.removeItem('token');
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }

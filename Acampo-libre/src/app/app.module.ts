@@ -13,7 +13,7 @@ import{AddCampsitePage} from '../pages/add-campsite/add-campsite';
 import {MembersComponent} from '../pages/members/members';
 import {AuthService} from '../services/auth.service';
 import { provide } from 'angular2/core';
-import {LoginPage} from '../page/login/login'
+import {LoginPage} from '../pages/login/login'
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import {LoginPage} from '../page/login/login'
     CampsitesPage,
     MapPage,
     AddCampsitePage,
-    MembersComponent
+    MembersComponent,
+    LoginPage
 
 
 
@@ -54,7 +55,8 @@ import {LoginPage} from '../page/login/login'
     CampsitesPage,
     MapPage,
     AddCampsitePage,
-    MembersComponent
+    MembersComponent,
+    LoginPage
 
 
 

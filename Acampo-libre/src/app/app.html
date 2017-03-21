@@ -5,7 +5,11 @@
              <button menuClose ion-item *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
               {{p.title}}
             </button>
+            <!-- <button menuClose ion-item *ngIf="token" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
+             {{p.title}}
+           </button> -->
         </ion-list>
+
     </ion-content>
 </ion-menu>
 

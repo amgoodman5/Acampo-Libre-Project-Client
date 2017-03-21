@@ -1,7 +1,8 @@
 // import { MainPage } from '../main/main';
 import { CampsitesPage } from '../campsites/campsites';
 import { Component,  ViewChild, ElementRef } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ModalController, NavController } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-home',

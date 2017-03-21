@@ -18,7 +18,7 @@ export class AuthService {
   constructor(private authHttp: AuthHttp, http: Http) {
     this.user = localStorage.getItem('profile')
     this.http = http;
-    this.baseUrl = "https://acampo.herokuapp.com/token";
+    // this.baseUrl = "http://localhost:3000/token";
     this.localUrl = "http://localhost:3000/token";
   }
 
@@ -27,7 +27,7 @@ export class AuthService {
   }
 
   public login(member) {
-    return this.http.post(this.baseUrl, member)
+    return this.http.post(this.localUrl, member)
       .toPromise()
   }
 
