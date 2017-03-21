@@ -1,4 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
+
+import { AgmCoreModule } from 'angular2-google-maps/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
@@ -9,6 +11,8 @@ import {CampsitesPage} from '../pages/campsites/campsites';
 import{LoginPage} from '../pages/login/login';
 import{MapPage} from '../pages/maps/maps';
 import{AddCampsitePage} from '../pages/add-campsite/add-campsite';
+import { MembersComponent } from '../pages/members/members';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import{AddCampsitePage} from '../pages/add-campsite/add-campsite';
     CampsitesPage,
     MapPage,
     LoginPage,
-    AddCampsitePage
+    AddCampsitePage,
+     MembersComponent,
+     LoginPage
 
 
 
@@ -46,7 +52,9 @@ import{AddCampsitePage} from '../pages/add-campsite/add-campsite';
     SinglePage,
     CampsitesPage,
     MapPage,
-    AddCampsitePage
+    AddCampsitePage,
+   MembersComponent,
+      LoginPage
 
 
 

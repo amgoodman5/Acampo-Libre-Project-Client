@@ -3,14 +3,12 @@
     <button ion-button menuToggle icon-only>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Campsites</ion-title >
+    <ion-title>Contribute</ion-title >
 </ion-navbar>
 </ion-header>
 
-
-
 <ion-content>
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmitLocation()">
   <ion-list>
 
     <ion-item>
@@ -38,11 +36,13 @@
 <ion-input [(ngModel)]="video_url" name="video_url" type="text"></ion-input>
 </ion-item>
 
-<ion-item>
-  <ion-label fixed>Address</ion-label>
-<ion-input [(ngModel)]="address" name="address" type="text"></ion-input>
-</ion-item>
 
+
+
+</ion-list>
+<!-- </form> -->
+
+<!-- <form (ngSubmit)="onSubmitLocation()"> -->
 <ion-item>
   <ion-label fixed>State</ion-label>
 <ion-select [(ngModel)]="state" name="state">
@@ -55,21 +55,14 @@
 
 
 <ion-item>
-  <ion-label fixed> Lat</ion-label>
-<ion-input [(ngModel)]="lat" name="lat" type="number"></ion-input>
+  <ion-label fixed> Latitude</ion-label>
+<ion-input [(ngModel)]="latitude" name="latitude" type="any"></ion-input>
 </ion-item>
 
 <ion-item>
   <ion-label fixed> Long</ion-label>
-<ion-input [(ngModel)]="long" name="long" type="float"></ion-input>
+<ion-input [(ngModel)]="longitude" name="longitude" type="any" ></ion-input>
 </ion-item>
-<ion-item>
-  <ion-fab center middle>
- <button ion-fab>Button</button>
-</ion-fab>
-  <button ion-button type="submit" block>Contribute</button>
-</ion-item>
-
-</ion-list>
+<button ion-fab type="submit">Button</button>
 </form>
 </ion-content>

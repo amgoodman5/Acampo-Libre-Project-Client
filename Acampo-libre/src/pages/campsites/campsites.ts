@@ -13,24 +13,28 @@ constructor(public navCtrl: NavController, private campsiteService:CampsiteServi
 
   }
 ngOnInit(){
-  this.getCampsites("The spot");
+  this.getLocation("The spot");
 
   }
-  getCampsites(campsite){
-    this.campsiteService.getCampsites(campsite)
+  ionViewWillEnter(campsite){
+    this.campsiteService.getLocation(campsite)
     .subscribe(response => {
      this.items = response;
+});
+  }
 
+  getLocation(location){
+    this.campsiteService.getLocation(location)
+    .subscribe(response => {
+     this.items = response;
   });
-  
-
 }
 ViewBack(){
   this.navCtrl.setRoot(HomePage)
 }
-getCampsite(campsite){
+getSingleLocation(location){
   this.navCtrl.push(SinglePage, {
-    campsite:campsite
+    location:location
   })
 }
 

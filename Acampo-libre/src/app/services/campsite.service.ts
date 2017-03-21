@@ -8,21 +8,32 @@ import 'rxjs/Rx';
 export class CampsiteService{
   http:any;
   baseUrl: String;
+  locationUrl:String;
+  id:Number;
+
 
   constructor(http:Http){
     this.http = http;
     this.baseUrl = "http://localhost:3000/api/v1/campsites";
+    this.locationUrl = "http://localhost:3000/location";
+
   }
 
-  getCampsites(data){
-    return this.http.get(this.baseUrl)
-      .map(res => res.json());
-  }
 
-  addCampsite(campsite) {
- 	 var headers = new Headers();
+ getLocation(data){
+       return this.http.get(this.locationUrl)
+     .map(res => res.json());
+ }
+
+ addLocation(location) {
+   var headers = new Headers();
    headers.append('Content-Type', 'application/json');
-   return this.http.post(this.baseUrl, JSON.stringify(campsite),{headers: headers})
- .map(res => res.json());
+   return this.http.post(this.locationUrl, JSON.stringify(location),{headers: headers})
+  .map(res => res.json());
+}
+
+ deleteCampsite(campsiteId){
+    return this.http.delete(this.baseUrl + '/' + campsiteId)
+   .map(res => res.json())
  }
 }

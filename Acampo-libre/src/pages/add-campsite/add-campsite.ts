@@ -3,6 +3,7 @@ import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NavController, NavParams } from 'ionic-angular';
 import {CampsiteService} from '../../app/services/campsite.service';
 import{CampsitesPage} from '../campsites/campsites';
+import{MapPage} from '../maps/maps';
 /*
   Generated class for the AddCampsite page.
 
@@ -20,36 +21,34 @@ export class AddCampsitePage {
   public picture:String;
   public confirmed:Boolean;
   public video_url:String;
-  public address:String;
-  public state:String;
-  public lat:Number;
-  public long:Number;
   public result:any;
+  public state:String;
+  public latitude:any;
+  public longitude:any;
 
   constructor(public navCtrl: NavController, private formBuilder: FormBuilder, public navParams: NavParams, private campsiteService:CampsiteService) {
 
 
   }
-onSubmit(){
-  let campsite = {
+
+onSubmitLocation(){
+  let location = {
    name: this.name,
+   latitude: this.latitude,
+   longitude:this.longitude,
+   state: this.state,
    type: this.type,
    description: this.description,
    picture: this.picture,
    confirmed: this.confirmed,
-   video_url: this.video_url,
-   address: this.address,
-   state: this.state,
-   lat: this.lat,
-   long: this.long
+   video_url: this.video_url
+ }
+ this.campsiteService.addLocation(location).subscribe(data =>{
+ this.result = data;
+ });
 
-}
-this.campsiteService.addCampsite(campsite).subscribe(data =>{
 
-this.result = data;
-});
-
-this.navCtrl.push(CampsitesPage);
+ this.navCtrl.push(CampsitesPage);
 
 
   }

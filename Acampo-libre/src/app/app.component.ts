@@ -10,7 +10,8 @@ import { CampsitesPage } from '../pages/campsites/campsites';
 import {MapPage} from '../pages/maps/maps';
 import {LoginPage} from '../pages/login/login';
 import{AddCampsitePage} from '../pages/add-campsite/add-campsite';
-
+import { Facebook, NativeStorage } from 'ionic-native';
+import {MembersComponent} from '../pages/members/members';
 
 
 @Component({
@@ -40,8 +41,20 @@ export class MyApp {
   }
     initializeApp(){
     this.platform.ready().then(() => {
-        // Okay, so the platform is ready and our plugins are available.
-        // Here you can do any higher level native things you might need.
+      let env = this;
+     NativeStorage.getItem('user')
+     .then( function (data) {
+       // user is previously logged and we have his data
+       // we will let him access the app
+       env.nav.push(MembersComponent);
+       Splashscreen.hide();
+     }, function (error) {
+       //we don't have the user data so we will ask him to log in
+       env.nav.push(LoginPage);
+       Splashscreen.hide();
+     });
+
+
         StatusBar.styleDefault();
         Splashscreen.hide();
       });
@@ -50,8 +63,9 @@ export class MyApp {
         this.nav.setRoot(page.component);
         this.activePage = page;
       }
-      
+
       checkActive(page){
         return page = this.activePage;
       }
+
   }
