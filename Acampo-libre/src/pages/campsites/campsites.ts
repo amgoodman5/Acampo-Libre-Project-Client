@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {CampsiteService} from '../../app/services/campsite.service';
+import {CampsiteService} from '../../services/campsite.service';
 import { HomePage } from '../home/home';
 import{SinglePage}from '../campsite-single/campsite-single';
 @Component({

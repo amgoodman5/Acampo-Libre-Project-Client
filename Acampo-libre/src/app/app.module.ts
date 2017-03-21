@@ -1,5 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
-
+import { AuthHttp, AuthConfig, AUTH_PROVIDERS, provideAuth, JwtHelper, tokenNotExpired, } from 'angular2-jwt';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -8,11 +8,12 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { SinglePage } from '../pages/campsite-single/campsite-single';
 import {CampsitesPage} from '../pages/campsites/campsites';
-import{LoginPage} from '../pages/login/login';
 import{MapPage} from '../pages/maps/maps';
 import{AddCampsitePage} from '../pages/add-campsite/add-campsite';
-import { MembersComponent } from '../pages/members/members';
-
+import {MembersComponent} from '../pages/members/members';
+import {AuthService} from '../services/auth.service';
+import { provide } from 'angular2/core';
+import {LoginPage} from '../page/login/login'
 
 @NgModule({
   declarations: [
@@ -23,10 +24,10 @@ import { MembersComponent } from '../pages/members/members';
     SinglePage,
     CampsitesPage,
     MapPage,
-    LoginPage,
     AddCampsitePage,
-     MembersComponent,
-     LoginPage
+    MembersComponent
+
+
 
 
 
@@ -53,13 +54,22 @@ import { MembersComponent } from '../pages/members/members';
     CampsitesPage,
     MapPage,
     AddCampsitePage,
-   MembersComponent,
-      LoginPage
+    MembersComponent
+
+
 
 
 
 
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [AuthService, {provide: ErrorHandler, useClass: IonicErrorHandler}, JwtHelper, AuthHttp,
+    provideAuth({
+           headerName: 'Authorization',
+           headerPrefix: '',
+           tokenName: 'token',
+           tokenGetter: (() => localStorage.getItem('token')),
+           globalHeaders: [{ 'Content-Type': 'application/json' }],
+           noJwtError: true
+       })]
 })
 export class AppModule {}

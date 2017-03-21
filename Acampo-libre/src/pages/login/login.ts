@@ -1,50 +1,53 @@
 import { Component } from '@angular/core';
-import { Facebook, NativeStorage } from 'ionic-native';
-import { NavController } from 'ionic-angular';
-import { MembersComponent } from '../members/members';
+import { NavController, NavParams } from 'ionic-angular';
+// import { MainPage } from '../main/main';
+import { HomePage } from '../home/home';
+// import { SignupPage } from '../signup/signup';
+import { AuthService } from '../../services/auth.service';
+/*
+  Generated class for the Login2 page.
 
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+*/
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-login2',
+  templateUrl: 'login2.html'
 })
-export class LoginPage {
-  FB_APP_ID: number = 1274231135994438;
+export class Login2Page {
+  email:any;
+  password:any;
+  member:any;
+  response:any;
 
-  constructor(public navCtrl: NavController) {
-    Facebook.browserInit(this.FB_APP_ID, "v2.8");
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService) {
+    this.member = {
+      email:this.email,
+      password:this.password
+    }
   }
 
-  doFbLogin(){
-    let permissions = new Array();
-    let nav = this.navCtrl;
-    //the permissions your facebook app needs from the user
-    permissions = ["public_profile"];
-
-
-    Facebook.login(permissions)
-    .then(function(response){
-      let userId = response.authResponse.userID;
-      let params = new Array();
-
-      //Getting name and gender properties
-      Facebook.api("/me?fields=name,gender", params)
-      .then(function(user) {
-        user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
-        //now we have the users info, let's save it in the NativeStorage
-        NativeStorage.setItem('user',
-        {
-          name: user.name,
-          gender: user.gender,
-          picture: user.picture
-        })
-        .then(function(){
-          nav.push(MembersComponent);
-        }, function (error) {
-          console.log(error);
-        })
+  login(){
+    this.authService.login(this.member)
+      .then(res => {
+        if(res.status == 200){
+          this.response = JSON.parse(res._body)
+          console.log(this.response.member)
+          localStorage.setItem('id', this.response.member.id);
+          localStorage.setItem('username', this.response.member.username);
+          localStorage.setItem('email', this.response.member.email);
+          localStorage.setItem('bio', this.response.member.bio);
+          localStorage.setItem('profile_pic', this.response.member.profile_pic);
+          localStorage.setItem('token', this.response.token);
+          this.navCtrl.setRoot(HomePage);
+        }else{
+          alert('Invaild login please try again');
+        }
       })
-    }, function(error){
-      console.log(error);
-    });
   }
+
+  goHome(){
+    this.navCtrl.setRoot(HomePage);
+  }
+
 }
