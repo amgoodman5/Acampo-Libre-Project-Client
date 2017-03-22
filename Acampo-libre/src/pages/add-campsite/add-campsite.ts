@@ -43,9 +43,11 @@ onSubmitLocation(){
    confirmed: this.confirmed,
    video_url: this.video_url
  }
+
  this.campsiteService.addLocation(location).subscribe(data =>{
  this.result = data;
  });
+
  this.navCtrl.push(CampsitesPage);
   }
 }

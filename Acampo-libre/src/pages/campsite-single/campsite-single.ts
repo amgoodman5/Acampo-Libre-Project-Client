@@ -18,13 +18,6 @@ export class SinglePage {
     console.log(this.item)
   }
 
-  deleteCampsite(campsiteId) {
-    this.campsiteService.deleteCampsite(campsiteId).subscribe(data => {
-      this.result = data;
-    })
-    this.navCtrl.push(CampsitesPage)
-  }
-
   goToMap() {
     this.navCtrl.push(MapPage)
   }

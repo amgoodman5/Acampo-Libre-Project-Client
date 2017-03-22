@@ -15,7 +15,7 @@ export class CampsiteService{
   constructor(http:Http){
     this.http = http;
     this.baseUrl = "https://acampo.herokuapp.com/location";
-    this.locationUrl = "http://localhost:3000/location";
+    // this.locationUrl = "http://localhost:3000/location";
 
   }
 
@@ -32,8 +32,8 @@ export class CampsiteService{
   .map(res => res.json());
 }
 
- deleteCampsite(campsiteId){
-    return this.http.delete(this.baseUrl + '/' + campsiteId)
+ deleteLocation(data){
+    return this.http.delete(this.baseUrl + '/' + 'id')
    .map(res => res.json())
  }
 }

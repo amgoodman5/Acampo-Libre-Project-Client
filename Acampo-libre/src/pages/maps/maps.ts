@@ -20,18 +20,21 @@ export class MapPage {
   ionViewWillEnter() {
     this.displayGoogleMap();
     this.getMarkers();
+
   }
   // 37.4122341   //-105.1288924
   displayGoogleMap() {
     let latLng = new google.maps.LatLng(39.742043, -104.991531);
-
     let mapOptions = {
       center: latLng,
       disableDefaultUI: true,
       zoom: 8,
+      clickable: true,
+      type: 'flat',
+
       mapTypeId: google.maps.MapTypeId.TERRAIN
     }
-    this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions);
+    this.map = new google.maps.Map(this.mapContainer.nativeElement,mapOptions);
   }
 
   getMarkers() {
@@ -40,14 +43,27 @@ export class MapPage {
       .subscribe(data => {
         this.addMarkersToMap(data);
       });
+
   }
+
+
 
   addMarkersToMap(markers) {
     for (let marker of markers) {
       let position = new google.maps.LatLng(marker.latitude, marker.longitude);
       let campSite = new google.maps.Marker({ position: position, title: marker.title });
+      var infoWindow = new google.maps.InfoWindow({content: marker.description })
       campSite.setMap(this.map);
+      google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
 
-    }
+
+ });
+
   }
+
 }
+
+
+        // infoWindow.open(this.map, marker);
+        }

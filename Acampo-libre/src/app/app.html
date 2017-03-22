@@ -2,15 +2,17 @@
 
     <ion-content>
         <ion-list>
+
              <button menuClose ion-item *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
               {{p.title}}
             </button>
-            <!-- <button menuClose ion-item *ngIf="token" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
-             {{p.title}}
-           </button> -->
         </ion-list>
 
     </ion-content>
 </ion-menu>
-
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

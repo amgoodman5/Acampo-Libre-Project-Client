@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import {CampsiteService} from '../services/campsite.service';
-// import { MainPage } from '../pages/main/main';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
@@ -62,11 +61,8 @@ goLogin(){
   this.nav.push(LoginPage);
 }
 
-
 checkActive(page){
   return page = this.activePage;
 }
 
   }
-// /if status === 200
-// else 500 fuck off

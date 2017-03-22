@@ -9,6 +9,7 @@ import {SinglePage}from '../campsite-single/campsite-single';
 })
 export class CampsitesPage {
   items: any;
+  location:any;
   constructor(public navCtrl: NavController, private campsiteService: CampsiteService) {
 
   }
@@ -16,11 +17,8 @@ export class CampsitesPage {
     this.getLocation("The spot");
 
   }
-  ionViewWillEnter(campsite) {
-    this.campsiteService.getLocation(campsite)
-      .subscribe(response => {
-        this.items = response;
-      });
+  ionViewWillEnter(location) {
+    this.getLocation(location);
   }
 
   getLocation(location) {
@@ -29,6 +27,21 @@ export class CampsitesPage {
         this.items = response;
       });
   }
+
+
+//   deleteLocation(location) {
+//    var locations = this.location;
+//     this.campsiteService.deleteLocation(location.id)
+//       .subscribe(data => {
+//        if(data.n == 1)
+//        for(var i = 0; i <location.length;i++){
+//          console.log(location[i])
+//          if(locations[i].id == location.id){
+//            location.splice(i, 1);
+//          }
+//      }
+//    })
+// }
   ViewBack() {
     this.navCtrl.setRoot(HomePage)
   }
@@ -37,5 +50,8 @@ export class CampsitesPage {
       location: location
     })
   }
+
+
+
 
 }
