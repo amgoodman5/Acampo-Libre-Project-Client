@@ -31,9 +31,9 @@ export class AuthService {
       .toPromise()
   }
 
-  // public signup(newMember) {
-  //   return this.http.post(this.localUrl+'signup', newMember)
-  //     .toPromise()
-  // }
+  public signup(newMember) {
+    return this.http.post(this.baseUrl+'member', newMember)
+      .toPromise()
+  }
 
 }

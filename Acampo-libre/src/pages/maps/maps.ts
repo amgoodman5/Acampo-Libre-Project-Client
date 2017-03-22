@@ -28,6 +28,7 @@ export class MapPage {
     let mapOptions = {
       center: latLng,
       disableDefaultUI: true,
+      icon:"../../assets/logo.png",
       zoom: 8,
       clickable: true,
       type: 'flat',

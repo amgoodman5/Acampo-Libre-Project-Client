@@ -29,7 +29,14 @@
     width: 100%;
     color: #fff;
   }
-  
+  ion-list.list.list-ios {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+ion-item.item.item-block.item-ios {
+    margin-right: 14px;
+    border-radius: 2px;
+}
 
 
 }
