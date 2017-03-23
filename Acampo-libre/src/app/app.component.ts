@@ -34,7 +34,7 @@ this.pages = [
   { title: 'About', component: AboutPage },
   { title: 'Campsite', component: CampsitesPage },
   { title: 'Map', component: MapPage },
-  { title: 'Register a Campsite', component: AddCampsitePage },
+  { title: 'Register A Campsite', component: AddCampsitePage },
   { title: 'Logout', component: LoginPage }
 
 
@@ -59,6 +59,9 @@ openPage(page){
 
 goLogin(){
   this.nav.push(LoginPage);
+}
+goToRegister(){
+  this.nav.push(AddCampsitePage)
 }
 
 checkActive(page){

@@ -48,23 +48,47 @@ export class MapPage {
   }
 
 
-
   addMarkersToMap(markers) {
     for (let marker of markers) {
       let position = new google.maps.LatLng(marker.latitude, marker.longitude);
       let campSite = new google.maps.Marker({ position: position, title: marker.title });
-      var infoWindow = new google.maps.InfoWindow({content: marker.description })
+      let infoWindow = new google.maps.InfoWindow({content: marker.description })
       campSite.setMap(this.map);
-      google.maps.event.addListener(marker, 'click', () => {
-      infoWindow.open(this.map, marker);
+
+        google.maps.event.addListener(marker, 'click', () => {
+        console.log(`hello`);
+        infoWindow.open(this.map, marker);
+
+      // return function() {
 
 
- });
+        });
 
-  }
+      }
 
-}
+    }
 
 
         // infoWindow.open(this.map, marker);
-        }
+    }
+    // for (var i = 0; i < vm.locations.length; i++) {
+    //             if (toyService.distance(vm.centerLat, vm.centerLng, vm.locations[i].latitude, vm.locations[i].longitude, 'M') < vm.radius) {
+    //                 marker = new google.maps.Marker({
+    //                     position: new google.maps.LatLng(vm.locations[i].latitude, vm.locations[i].longitude),
+    //                     map: map,
+    //                     icon: `http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=${vm.locations[i].id}|FF0000|000000`
+    //                 });
+    //                 // collect each new marker in an array
+    //                 vm.markers.push(marker);
+    //                 vm.proximal.push(vm.locations[i])
+    //                 // set the marker based on the map
+    //                 marker.setMap(map);
+    //                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    //                     return function() {
+    //                         vm.toyId = vm.proximal[vm.proximal.length-1].id;
+    //                         infowindow.setContent(`<a href="/toysearch/${vm.toyId}">${vm.locations[i].description}</a>`);
+    //                         infowindow.open(map, marker);
+    //                     }
+    //                 })(marker, i));
+    //             }
+    //         }

@@ -24,8 +24,19 @@ ion-content.content.content-ios.statusbar-padding {
 .toolbar-background.toolbar-background-ios {
     background-color: #424242;
 }
+.toolbar-background.toolbar-background {
+    background-color: #424242;
+}
+
 
 .toolbar-title-ios {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+    color: #f4f4f4;
+    pointer-events: auto;
+}
+.toolbar-title {
     font-size: 1.7rem;
     font-weight: 600;
     text-align: center;

@@ -1,7 +1,12 @@
 ion-app._gmaps_cdv_ .nav-decor{
   background-color: transparent !important;
 }
-
+.item-ios h2 {
+ margin: 0 0 2px;
+ font-size: 1.7rem;
+ font-weight: normal;
+ color: #92cc01;
+}
     #map {
         height: 100%;
     }

@@ -14,13 +14,25 @@
 
   <ion-content class="card-background-page2">
   <div class ="header">
-     <img src="../../assets/acampo.jpg"/>
+
+
+    <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+    <source src="../../assets/video.mp4" type="video/mp4" style="height:300px">
+
+</video>
+<div class="overlay">
+
+        <h1 class ="title"></h1>
+           <img class ='logo' src="../../assets/logo.png"/><!-- <p class ="title">Open Sourced Campsite Resource</p> -->
+      </div>
+
   </div>
+  
   <ion-card (click)="ViewCampsite()">
 
     <img src="../../assets/camp2.jpg"/>
     <div class="card-title">Colorado</div>
-    <div class="card-subtitle">41 Listings</div>
+    <div class="card-subtitle">5 Listings</div>
   </ion-card>
 
   <ion-card>
